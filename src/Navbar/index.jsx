@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore,BestAtmosTitle,MenuIconDiv,BestAtmosDiv,ImgDiv,CartIcon,MenuSubtitle, CartItems,All,OurMenuTitle,MenuChild,MenuContainer,MenuParent} from "./style";
+import {Container, Wrapper, Button, LogoWrapper,Line,PizzasTitle, LogoWrapperBefore,BestAtmosPersonSubt,BestAtmosBtn,BestAtmosTitle,MenuIconDiv,BestAtmosDiv,ImgDiv,CartIcon,MenuSubtitle, CartItems,All,OurMenuTitle,MenuChild,MenuContainer,MenuParent} from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import Menu1 from "../assets/images/menu-1-370x278.jpg"
 import Menu2 from "../assets/images/menu-2-370x278.jpg"
@@ -93,8 +93,14 @@ function Index() {
                         <div className="col-5">
                             <BestAtmosTitle>Best atmosphere</BestAtmosTitle>
                             <h3>PizzaHouse is the place of the best pizza and high-quality service.</h3>
+                            <Line></Line><BestAtmosPersonSubt>Ben Smith, Founder</BestAtmosPersonSubt>
+                            <BestAtmosBtn>VIEW OUR SERVICES</BestAtmosBtn>
                         </div>
                     </BestAtmosDiv>
+
+                <div>
+                    <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
+                </div>
                 </div>
         </All>
     );
