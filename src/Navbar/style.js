@@ -82,45 +82,57 @@ const CartItems = styled.span`
 
 const OurMenuTitle=styled.h1`
 text-align: center;
-font-weight: 300;
+font-weight: 400;
+  font-size: 55px;
+  font-family: sa;
+  
 `
 const MenuChild=styled.div`
 margin: 30px 0;
+`
+
+
+
+const ImgWrapper=styled.div`
+opacity: 0.8;
+filter: brightness(0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 370px;
 `
 
 const ImgDiv=styled.div`
 position: relative;
 `
 
-const ImgWrapper=styled.div`
-opacity: 0.8;
-filter: brightness(0.7);
-  width: 100%;
-  height: 100%;
-`
-
 const MenuIconDiv=styled.div`
-&:hover{
-  background-color: #FFE745;
-}
-position: absolute;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background-color: #6046B6;
-border: 5px solid whitesmoke;
-top: 30%;
-left: 35%;
-display: flex;
-align-items: center;
-justify-content: center;
+  &:hover {
+    background-color: #FFE745;
+  }
+
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #6046B6;
+  border: 5px solid #cecdcd;
+  top: 30%;
+  left: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
  
 const MenuSubtitle=styled.h4`
 position: absolute;
+  &:hover{
+    color: #FFE745
+  }
 color: white;
 top: 68%;
 left: 37%;
+  font-weight: 700;
 `
 
 const MenuParent=styled.div`
@@ -132,28 +144,33 @@ justify-content: end;
 margin: 70px 0;
 background-size: cover;
 width: 100%;
-height: 100%;
+height: 500px;
 background-image: url(${BestAtmosImg});
+  background-position: bottom;
+  overflow: hidden;
+  position: relative;
 `
 const BestAtmosTitle=styled.h1`
 font-family: 'Times New Roman', Times, serif;
 font-weight: 500;
-font-size: 70px;
+font-size: 55px;
+  color: #fff
 `
 const BestAtmosBtn=styled.button`
 &:hover{
-  background-color: lightseagreen;
-  color: white;
+  background-color: #FFE745;
+  color: #000;
   letter-spacing: 2px;
   transition: all 0.5s ease;
 }
-height: 75px;
+  background-color: lightseagreen;
+  color: #fff;
+  height: 75px;
 width: 250px;
 border: none;
-background-color: #FFE745;
 margin: 20px 0;
 letter-spacing: 1px;
-font-size: 18px;
+font-size: 14px;
 font-weight: 500;
 `
 const Line=styled.span`
@@ -162,11 +179,12 @@ margin-left: 0px;
 margin: 7px 0;
 width: 60px;
 height: 4px;
-background-color: #6046B6;
+background-color: #FFE745;
 `
 const BestAtmosPersonSubt=styled.h4`
 display: inline-block;
 margin: 10px 20px;
+  font-size: 18px;
 color: #777;
 `
 const PizzasTitle=styled.h1`
@@ -176,10 +194,14 @@ text-align: center;
 font-family: 'Times New Roman', Times, serif;
 `
 
+const BgBlack = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+`
 
 
-<<<<<<< HEAD
-export {Container, Wrapper, Button, LogoWrapper,ImgDiv, LogoWrapperBefore,CartIcon,BestAtmosTitle,MenuIconDiv,MenuSubtitle,BestAtmosDiv, CartItems,OurMenuTitle,MenuChild,MenuParent,All, ImgWrapper}
-=======
-export {Container, Wrapper, Button, LogoWrapper,PizzasTitle,ImgDiv,Line,BestAtmosBtn,BestAtmosPersonSubt, LogoWrapperBefore,CartIcon,BestAtmosTitle,MenuIconDiv,MenuSubtitle,BestAtmosDiv, CartItems,OurMenuTitle,MenuChild,MenuParent,All}
->>>>>>> 590782b2451dbac759c3cffbd4bb2f559b583c68
+
+
+export {Container, Wrapper, Button, LogoWrapper,PizzasTitle,ImgDiv,Line,BestAtmosBtn,BestAtmosPersonSubt, LogoWrapperBefore,CartIcon,BestAtmosTitle,MenuIconDiv,MenuSubtitle,BestAtmosDiv, CartItems,OurMenuTitle,MenuChild,MenuParent,All, ImgWrapper, BgBlack}

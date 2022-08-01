@@ -1,9 +1,5 @@
 import React, {useState} from 'react';
-<<<<<<< HEAD
-import {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore,BestAtmosTitle,MenuIconDiv,BestAtmosDiv,ImgDiv,CartIcon,MenuSubtitle, CartItems,All,OurMenuTitle,MenuChild,MenuContainer,MenuParent, ImgWrapper} from "./style";
-=======
-import {Container, Wrapper, Button, LogoWrapper,Line,PizzasTitle, LogoWrapperBefore,BestAtmosPersonSubt,BestAtmosBtn,BestAtmosTitle,MenuIconDiv,BestAtmosDiv,ImgDiv,CartIcon,MenuSubtitle, CartItems,All,OurMenuTitle,MenuChild,MenuContainer,MenuParent} from "./style";
->>>>>>> 590782b2451dbac759c3cffbd4bb2f559b583c68
+import {Container, Wrapper, Button, LogoWrapper,Line,PizzasTitle, LogoWrapperBefore,BestAtmosPersonSubt,BestAtmosBtn,BestAtmosTitle,MenuIconDiv,BestAtmosDiv,ImgDiv,CartIcon,MenuSubtitle, CartItems,All,OurMenuTitle,MenuChild,MenuContainer,MenuParent, ImgWrapper, BgBlack} from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import Menu1 from "../assets/images/menu-1-370x278.jpg"
 import Menu2 from "../assets/images/menu-2-370x278.jpg"
@@ -19,7 +15,7 @@ import {BiDrink} from "react-icons/bi";
 import {Link} from "react-router-dom";
 
 function Index() {
-    const [active, setActive] = useState("about")
+    const [active, setActive] = useState("home")
     const [show, setShow] = useState(false)
 
     return (
@@ -51,80 +47,68 @@ function Index() {
                 <MenuParent className="row">
                     <MenuChild className="col-4">
                         <ImgDiv>
-                            <ImgWrapper>
-                                <img src={Menu1} alt="menu-1" />
+                            <ImgWrapper className="img-wrapper">
+                                <img className="img" src={Menu1} alt="menu-1" />
                             </ImgWrapper>
-                            <MenuIconDiv><TbLeaf style={{fontSize:"60px",color:"white"}}/>
+                            <MenuIconDiv className="icon-wrapper"><TbLeaf className="icon"/>
                             </MenuIconDiv>
                             <MenuSubtitle>Salads</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
                     <MenuChild className="col-4">
                         <ImgDiv>
-                            <ImgWrapper>
-                                <img src={Menu2} alt="menu-2" />
+                            <ImgWrapper className="img-wrapper">
+                                <img className="img" src={Menu2} alt="menu-2" />
                             </ImgWrapper>
-                            <MenuIconDiv><IoPizzaOutline style={{fontSize:"60px",color:"white"}}/></MenuIconDiv>
+                            <MenuIconDiv className="icon-wrapper"><IoPizzaOutline className="icon"/></MenuIconDiv>
                             <MenuSubtitle>Pizzas</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
                     <MenuChild className="col-4">
                         <ImgDiv>
-                            <ImgWrapper>
-                                <img src={Menu3} alt="menu-3" />
+                            <ImgWrapper className="img-wrapper">
+                                <img className="img" src={Menu3} alt="menu-3" />
                             </ImgWrapper>
-                            <MenuIconDiv><GiHamburger style={{fontSize:"60px",color:"white"}}/></MenuIconDiv>
+                            <MenuIconDiv className="icon-wrapper"><GiHamburger className="icon"/></MenuIconDiv>
                             <MenuSubtitle>Burgers</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
                     <MenuChild className="col-4">
                         <ImgDiv>
-                            <ImgWrapper>
-                                <img src={Menu4} alt="menu-4" />
+                            <ImgWrapper className="img-wrapper">
+                                <img className="img" src={Menu4} alt="menu-4" />
                             </ImgWrapper>
-                            <MenuIconDiv><FaIceCream style={{fontSize:"60px",color:"white"}}/></MenuIconDiv>
+                            <MenuIconDiv className="icon-wrapper"><FaIceCream className="icon"/></MenuIconDiv>
                             <MenuSubtitle>Desserts</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
                     <MenuChild className="col-4">
                         <ImgDiv>
-                            <ImgWrapper>
-                                <img src={Menu5} alt="menu-5" />
+                            <ImgWrapper className="img-wrapper">
+                                <img className="img" src={Menu5} alt="menu-5" />
                             </ImgWrapper>
-                            <MenuIconDiv><BiDrink style={{fontSize:"60px",color:"white"}}/></MenuIconDiv>
+                            <MenuIconDiv className="icon-wrapper"><BiDrink className="icon" /></MenuIconDiv>
                             <MenuSubtitle>Drinks</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
                     <MenuChild className="col-4">
                         <ImgDiv>
-                            <ImgWrapper>
-                                <img src={Menu6} alt="menu-6" />
+                            <ImgWrapper className="img-wrapper">
+                                <img className="img" src={Menu6} alt="menu-6" />
                             </ImgWrapper>
-                            <MenuIconDiv><IoFish style={{fontSize:"60px",color:"white"}}/></MenuIconDiv>
+                            <MenuIconDiv className="icon-wrapper"><IoFish className="icon"/></MenuIconDiv>
                             <MenuSubtitle>Seafood</MenuSubtitle>
-<<<<<<< HEAD
                         </ImgDiv>
                     </MenuChild>
                 </MenuParent>
-
-                <BestAtmosDiv className="row">
-                    <div className="col-5">
-                        <BestAtmosTitle>Best atmosphere</BestAtmosTitle>
-                        <h3>PizzaHouse is the place of the best pizza and high-quality service.</h3>
-                        <button></button>
-                    </div>
-                </BestAtmosDiv>
             </div>
-=======
-                            </ImgDiv>
-                        </MenuChild>
-                    </MenuParent>
                     
                     <BestAtmosDiv className="row">
-                        <div className="col-5">
+                        <BgBlack />
+                        <div className="col-5" style={{zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "left"}}>
                             <BestAtmosTitle>Best atmosphere</BestAtmosTitle>
-                            <h3>PizzaHouse is the place of the best pizza and high-quality service.</h3>
-                            <Line></Line><BestAtmosPersonSubt>Ben Smith, Founder</BestAtmosPersonSubt>
+                            <h3 style={{color: "#fff", fontSize: "24px"}}>PizzaHouse is the place of the best pizza and high-quality service.</h3>
+                            <div style={{display: "flex", alignItems: "center"}}><Line></Line><BestAtmosPersonSubt>Ben Smith, Founder</BestAtmosPersonSubt></div>
                             <BestAtmosBtn>VIEW OUR SERVICES</BestAtmosBtn>
                         </div>
                     </BestAtmosDiv>
@@ -132,8 +116,6 @@ function Index() {
                 <div>
                     <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
                 </div>
-                </div>
->>>>>>> 590782b2451dbac759c3cffbd4bb2f559b583c68
         </All>
     );
 }
