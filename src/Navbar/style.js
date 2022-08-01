@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import {Cart} from "@styled-icons/bootstrap/Cart"
-import Logo from "../assets/images/logo-198x66.png"
 
 
 const Container = styled.div`
@@ -77,10 +76,18 @@ const CartItems = styled.span`
     justify-content: center;
     padding: 2px;
 `
+const MenuParent=styled.div`
+    display:flex;
+    justify-content:space-around;
+`
+const MenuChild=styled.div`
+margin:0 30px;
+`
 
 
 
-export {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems}
 
 
 
+
+export {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems,MenuParent,MenuChild}

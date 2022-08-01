@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
-import {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems} from "./style";
+import {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems,MenuChild,MenuParent} from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import {Link} from "react-router-dom";
+import Menu1 from "../assets/images/menu-1-370x278.jpg"
+import Menu2 from "../assets/images/menu-2-370x278.jpg"
+import Menu3 from "../assets/images/menu-3-370x278.jpg"
 
 function Index() {
     const [active, setActive] = useState("about")
@@ -30,6 +33,19 @@ function Index() {
                     {show && <CartItems>12</CartItems>}
                 </Wrapper>
             </Container>
+            {/*<div className='container'>*/}
+            {/*        <div className="row">*/}
+            {/*        <MenuChild className='col-4'>*/}
+            {/*            <img src={Menu1} alt="menu-1" />*/}
+            {/*            </MenuChild>*/}
+            {/*        <MenuChild className='col-4'>*/}
+            {/*            <img src={Menu2} alt="menu-2" />*/}
+            {/*            </MenuChild>*/}
+            {/*        <MenuChild className='col-4'>*/}
+            {/*            <img src={Menu3} alt="menu-3" />*/}
+            {/*            </MenuChild>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
         </>
     );
 }
