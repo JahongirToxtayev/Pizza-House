@@ -33,19 +33,19 @@ function Index() {
                     {show && <CartItems>12</CartItems>}
                 </Wrapper>
             </Container>
-            {/*<div className='container'>*/}
-            {/*        <div className="row">*/}
-            {/*        <MenuChild className='col-4'>*/}
-            {/*            <img src={Menu1} alt="menu-1" />*/}
-            {/*            </MenuChild>*/}
-            {/*        <MenuChild className='col-4'>*/}
-            {/*            <img src={Menu2} alt="menu-2" />*/}
-            {/*            </MenuChild>*/}
-            {/*        <MenuChild className='col-4'>*/}
-            {/*            <img src={Menu3} alt="menu-3" />*/}
-            {/*            </MenuChild>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
+            <div className='container'>
+                    <div className="row">
+                    <MenuChild className='col-4'>
+                        <img src={Menu1} alt="menu-1" />
+                        </MenuChild>
+                    <MenuChild className='col-4'>
+                        <img src={Menu2} alt="menu-2" />
+                        </MenuChild>
+                    <MenuChild className='col-4'>
+                        <img src={Menu3} alt="menu-3" />
+                        </MenuChild>
+                    </div>
+                </div>
         </>
     );
 }
