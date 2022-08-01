@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems} from "./style";
+import {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems,MenuChild,MenuParent} from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import {Link} from "react-router-dom";
 
@@ -30,6 +30,19 @@ function Index() {
                     {show && <CartItems>12</CartItems>}
                 </Wrapper>
             </Container>
+            <div className='container'>
+                    <div className="row">
+                    <MenuChild className='col-4'>
+                        <img src="../assets/images/menu-1-370x278.jpg" alt="menu-1" />
+                        </MenuChild>
+                    <MenuChild className='col-4'>
+                        <img src="../assets/images/menu-2-370x278.jpg" alt="menu-2" />
+                        </MenuChild>
+                    <MenuChild className='col-4'>
+                        <img src="../assets/images/menu-3-370x278.jpg" alt="menu-3" />
+                        </MenuChild>
+                    </div>
+                </div>
         </>
     );
 }
