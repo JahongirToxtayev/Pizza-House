@@ -1,7 +1,9 @@
 import styled from "styled-components"
 import {Cart} from "@styled-icons/bootstrap/Cart"
 
-
+const All=styled.body`
+font-family: 'Poppins',sans-serif;
+`
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -76,12 +78,45 @@ const CartItems = styled.span`
     justify-content: center;
     padding: 2px;
 `
-const MenuParent=styled.div`
-    display:flex;
-    justify-content:space-around;
+
+const OurMenuTitle=styled.h1`
+text-align: center;
 `
 const MenuChild=styled.div`
-margin:0 30px;
+margin: 30px 0;
 `
 
-export {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems,MenuParent,MenuChild}
+const ImgDiv=styled.div`
+position: relative;
+opacity: 0.8;
+filter: brightness(0.7);
+`
+const MenuIconDiv=styled.div`
+position: absolute;
+width: 100px;
+height: 100px;
+border-radius: 50%;
+background-color: #6046B6;
+border: 5px solid whitesmoke;
+top: 30%;
+left: 35%;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+ 
+const MenuSubtitle=styled.h4`
+position: absolute;
+color: white;
+top: 68%;
+left: 37%;
+`
+
+
+const MenuParent=styled.div`
+margin: 20px 0;
+`
+
+
+
+export {Container, Wrapper, Button, LogoWrapper,ImgDiv, LogoWrapperBefore,CartIcon,MenuIconDiv,MenuSubtitle, CartItems,OurMenuTitle,MenuChild,MenuParent,All}
