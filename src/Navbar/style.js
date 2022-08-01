@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import {Cart} from "@styled-icons/bootstrap/Cart"
+import BestAtmosImg from "../assets/images/bg-3.jpg"
 
 const All=styled.body`
 font-family: 'Poppins',sans-serif;
@@ -81,6 +82,7 @@ const CartItems = styled.span`
 
 const OurMenuTitle=styled.h1`
 text-align: center;
+font-weight: 300;
 `
 const MenuChild=styled.div`
 margin: 30px 0;
@@ -116,7 +118,21 @@ left: 37%;
 const MenuParent=styled.div`
 margin: 20px 0;
 `
+const BestAtmosDiv=styled.div`
+display: flex;
+justify-content: end;
+margin: 70px 0;
+background-size: cover;
+width: 100%;
+height: 100%;
+background-image: url({BestAtmosImg});
+`
+const BestAtmosTitle=styled.h1`
+font-family: 'Times New Roman', Times, serif;
+font-weight: 500;
+font-size: 70px;
+`
 
 
 
-export {Container, Wrapper, Button, LogoWrapper,ImgDiv, LogoWrapperBefore,CartIcon,MenuIconDiv,MenuSubtitle, CartItems,OurMenuTitle,MenuChild,MenuParent,All}
+export {Container, Wrapper, Button, LogoWrapper,ImgDiv, LogoWrapperBefore,CartIcon,BestAtmosTitle,MenuIconDiv,MenuSubtitle,BestAtmosDiv, CartItems,OurMenuTitle,MenuChild,MenuParent,All}
