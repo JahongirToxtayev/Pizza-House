@@ -81,3 +81,6 @@ const CartItems = styled.span`
 
 
 export {Container, Wrapper, Button, LogoWrapper, LogoWrapperBefore, CartIcon, CartItems}
+
+
+

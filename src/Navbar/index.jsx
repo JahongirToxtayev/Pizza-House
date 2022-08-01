@@ -16,13 +16,13 @@ function Index() {
                 </LogoWrapper>
                 <Wrapper>
                     <Link to="/">
-                        <Button borderBottom={active === "home" && true} onClick={() => setActive("home")}>Home</Button>
+                        <Button borderB={active === "home" && true} onClick={() => setActive("home")}>Home</Button>
                     </Link>
                     <Link to="/">
-                        <Button borderBottom={active === "about" && true} onClick={() => setActive("about")}>About us</Button>
+                        <Button borderB={active === "about" && true} onClick={() => setActive("about")}>About us</Button>
                     </Link>
                     <Link to="/">
-                        <Button borderBottom={active === "contacts" && true} onClick={() => setActive("contacts")}>Contact</Button>
+                        <Button borderB={active === "contacts" && true} onClick={() => setActive("contacts")}>Contact</Button>
                     </Link>
                 </Wrapper>
                 <Wrapper>
