@@ -1,6 +1,9 @@
 import styled from "styled-components"
 import {Cart} from "@styled-icons/bootstrap/Cart"
 import BestAtmosImg from "../assets/images/bg-3.jpg"
+import SliderImg1 from "../assets/images/slide-1-1920x753.jpeg"
+import SliderImg2 from "../assets/images/slide-2-1920x753.jpeg"
+import SliderImg3 from "../assets/images/lukas-bee-T-SkHm-18qQ-unsplash.jpg"
 
 const All=styled.body`
 font-family: 'Poppins',sans-serif;
@@ -18,6 +21,59 @@ const Container = styled.div`
   overflow: hidden;
   height: 80px;
 `
+
+const SliderContainer = styled.div`
+  z-index: 2133131;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  height: 753px;
+  width: 100%;
+`
+
+const getBg = (bg) => bg === 1 ? SliderImg1 : bg === 2 ? SliderImg2 : SliderImg3
+
+const Slide = styled.div`
+  z-index: 12;
+  background-image: url(${({bg}) => getBg(bg)});
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding-left: 10rem;
+  flex-direction: column;
+  justify-content: center;
+  background-position: ${({bg}) => bg === 3 && "center"};
+`
+
+const LeftArrow = styled.div`
+  z-index: 1232432523;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 370px;
+  left: 0;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0,0,0,0.3);
+`
+
+const RightArrow = styled.div`
+  z-index: 1232432523;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 370px;
+  right: 0;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.3);
+`
+
+
 
 const LogoWrapper = styled.div`
   display: flex;
@@ -171,7 +227,7 @@ width: 250px;
 border: none;
 margin: 20px 0;
 letter-spacing: 1px;
-font-size: 14px;
+font-size: 16px;
 font-weight: 500;
 `
 const Line=styled.span`
@@ -202,7 +258,45 @@ const BgBlack = styled.div`
   position: absolute;
 `
 
+const SlideBtn = styled(BestAtmosBtn)`
+  &:hover{
+    background-color: lightseagreen;
+    color: #fff;
+    letter-spacing: 2px;
+    transition: all 0.5s ease;
+  }
+  background-color: #FFE745;
+  color: #000;
+  font-weight: 700;
+`
 
 
-
-export {Container, Wrapper, Button, LogoWrapper,PizzasTitle,ImgDiv,Line,BestAtmosBtn,BestAtmosPersonSubt, LogoWrapperBefore,CartIcon,BestAtmosTitle,MenuIconDiv,MenuSubtitle,BestAtmosDiv, CartItems,OurMenuTitle,MenuChild,MenuParent,All, ImgWrapper, BgBlack}
+export {
+    Container,
+    Wrapper,
+    Button,
+    LogoWrapper,
+    PizzasTitle,
+    ImgDiv,
+    Line,
+    BestAtmosBtn,
+    BestAtmosPersonSubt,
+    LogoWrapperBefore,
+    CartIcon,
+    BestAtmosTitle,
+    MenuIconDiv,
+    MenuSubtitle,
+    BestAtmosDiv,
+    CartItems,
+    OurMenuTitle,
+    MenuChild,
+    MenuParent,
+    All,
+    ImgWrapper,
+    BgBlack,
+    SliderContainer,
+    Slide,
+    SlideBtn,
+    LeftArrow,
+    RightArrow
+}
