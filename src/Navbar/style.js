@@ -83,8 +83,9 @@ const CartItems = styled.span`
 const OurMenuTitle=styled.h1`
 text-align: center;
 font-weight: 400;
-  font-size: 55px;
-  font-family: sa;
+  font-size: 65px;
+  letter-spacing: 2px;
+  font-family: 'Times New Roman', Times, serif;
   
 `
 const MenuChild=styled.div`
@@ -153,7 +154,7 @@ background-image: url(${BestAtmosImg});
 const BestAtmosTitle=styled.h1`
 font-family: 'Times New Roman', Times, serif;
 font-weight: 500;
-font-size: 55px;
+font-size: 65px;
   color: #fff
 `
 const BestAtmosBtn=styled.button`
