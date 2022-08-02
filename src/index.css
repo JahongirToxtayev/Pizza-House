@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 code {
@@ -39,4 +40,31 @@ color: #fff
 
 .img-wrapper{
   overflow: hidden;
+}
+
+.prev{
+  position: absolute;
+  left: 0;
+  top: 370px;
+}
+
+.slide.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide.lastSlide {
+  transform: translateX(-100%);
+}
+.slide.nextSlide {
+  transform: translateX(100%);
+}
+
+.slide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s linear;
 }
