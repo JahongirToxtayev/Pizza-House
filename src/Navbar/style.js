@@ -286,6 +286,27 @@ display: flex;
 flex-direction: reverse;
 justify-content: space-between;
 `
+const MoreBtn=styled.button`
+&:hover{
+  background-color: #FFE745;
+  color: #000;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+  background-color: lightseagreen;
+  color: #fff;
+  padding: 5px;
+border: none;
+margin: 20px 0;
+letter-spacing: 1px;
+font-size: 16px;
+font-weight: 500;
+`
+const LikeBtn=styled.button`
+border: none;
+background: none;
+font-size: 24px;
+`
 
 
 export {
@@ -318,5 +339,7 @@ export {
     RightArrow,
     PizzaImg,
     PizzaCard,
-    BetweenReverseCard
+    BetweenReverseCard,
+    MoreBtn,
+    LikeBtn
 }

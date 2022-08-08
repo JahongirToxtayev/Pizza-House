@@ -30,7 +30,9 @@ import {
     RightArrow,
     PizzaImg,
     PizzaCard,
-    BetweenReverseCard
+    BetweenReverseCard,
+    MoreBtn,
+    LikeBtn
 } from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import Menu1 from "../assets/images/menu-1-370x278.jpg"
@@ -259,7 +261,7 @@ function Index() {
                     {source.map((v,i)=>{
                         console.log(v);
                         return <div className="col-3" key={i} >
-                            <PizzaCard className="card mx-2 my-3 shadow-lg pb-4" data-aos={"zoom-in-left"}>
+                            <PizzaCard className="card mx-2 my-3 shadow-lg pb-2" data-aos={"zoom-in-left"}>
                                 <PizzaImg  src={`${v.Image}`} alt="" />
                                 <div className="body-card">
                                 <h4 className='text-center'>{v.Pizza}</h4>
@@ -273,9 +275,9 @@ function Index() {
                                     </p>
                                     <h5>{`${v.Cost} $`}</h5>
                                 </BetweenReverseCard>
-                                <BetweenReverseCard>
-                                    <button><AiOutlineHeart/></button>
-                                    <button>More</button>
+                                <BetweenReverseCard className='mx-3'>
+                                    <LikeBtn><AiOutlineHeart/></LikeBtn>
+                                    <Link to={`/more/${v.id}`}><MoreBtn>More <AiOutlineArrowRight/></MoreBtn></Link>
                                 </BetweenReverseCard>
                             </div>
                             </PizzaCard>
