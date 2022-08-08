@@ -27,7 +27,10 @@ import {
     Slide,
     SlideBtn,
     LeftArrow,
-    RightArrow
+    RightArrow,
+    PizzaImg,
+    PizzaCard,
+    BetweenReverseCard
 } from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import Menu1 from "../assets/images/menu-1-370x278.jpg"
@@ -47,14 +50,25 @@ import {Link} from "react-router-dom";
 import {FiChevronLeft, FiChevronRight} from "react-icons/fi";
 import {ArrowLeft} from "@styled-icons/bootstrap/ArrowLeft"
 import {ArrowRight} from "@styled-icons/bootstrap/ArrowRight"
-import {AiOutlineArrowLeft} from "react-icons/ai"
+import {AiOutlineHeart,AiFillHeart, AiFillStar, AiOutlineArrowLeft} from "react-icons/ai"
 import {AiOutlineArrowRight} from "react-icons/ai"
+import { useDispatch, useSelector } from 'react-redux';
+import AOS from 'aos';
+import "aos";
+import "aos/dist/aos.css";
 const data = [{id: 1, title: "PERFECT PIZZA", info: "Experience the taste of a perfect pizza at PizzaHouse, one of the best restaurants!"},
     {id: 2, title: "NICE INGREDIENTS", info: "We use only the best ingredients to make one-of-a-kind pizzas for our customers."},
     {id: 3,  title: "FAST DELIVERY", info: "Enjoy the fast delivery. Feel yourself to eat fresh meal like in onsite"}]
 
 
 function Index() {
+
+    useEffect(() => {
+      AOS.init({
+        duration:1000
+    });
+    }, [])
+
     const [active, setActive] = useState("home")
     const [show, setShow] = useState(false)
     const [slides, setSlides] = useState(data)
@@ -94,6 +108,30 @@ function Index() {
             return index
         })
     }
+
+    const source =useSelector(state=>state)
+    console.log(source,"keldim");
+
+
+
+
+
+    const dispatch=useDispatch()
+
+
+    const axios = require('axios').default;
+    useEffect(() => {
+        
+        axios.get('http://myjson.dit.upm.es/api/bins/aovm')
+          .then(function (response) {
+            const action={type:"ALL_DATA",payload:response.data}
+            dispatch(action)
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }, [])
+    
 
     return (<All>
             <Container>
@@ -215,8 +253,36 @@ function Index() {
                 </div>
             </BestAtmosDiv>
 
-            <div>
+            <div className='container'>
                 <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
+                <div className="row">
+                    {source.map((v,i)=>{
+                        console.log(v);
+                        return <div className="col-3" key={i} >
+                            <PizzaCard className="card mx-2 my-3 shadow-lg pb-4" data-aos={"zoom-in-left"}>
+                                <PizzaImg  src={`${v.Image}`} alt="" />
+                                <div className="body-card">
+                                <h4 className='text-center'>{v.Pizza}</h4>
+                                <BetweenReverseCard className='mx-3'>
+                                    <p>
+                                        <span className='text-warning'><AiFillStar/></span>
+                                        <span className='text-warning'><AiFillStar/></span>
+                                        <span className={v.Cost>=9 ? "text-warning":"text-secondary"}><AiFillStar/></span>
+                                        <span className={v.Cost>10 ? "text-warning":"text-secondary"}><AiFillStar/></span>
+                                        <span className={v.Cost>12 ? "text-warning":"text-secondary"}><AiFillStar/></span>
+                                    </p>
+                                    <h5>{`${v.Cost} $`}</h5>
+                                </BetweenReverseCard>
+                                <BetweenReverseCard>
+                                    <button><AiOutlineHeart/></button>
+                                    <button>More</button>
+                                </BetweenReverseCard>
+                            </div>
+                            </PizzaCard>
+                            
+                        </div>
+                    })}
+                </div>
             </div>
         </All>);
 }

@@ -104,10 +104,10 @@ const Wrapper = styled.div`
 const Button = styled.button`
     border: none;
     outline: none;
-    font-weight: bold;
+    font-weight: 500;
     background-color: transparent;
     margin: 0 10px;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.34;
     padding: 10px 0;
     border-bottom: ${({borderBottom}) => borderBottom ? "5px solid #6046b6" : "5px solid transparent"};
@@ -270,6 +270,23 @@ const SlideBtn = styled(BestAtmosBtn)`
   font-weight: 700;
 `
 
+const PizzaImg=styled.img`
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-top-right-radius:24px;
+border-top-left-radius:24px;
+`
+const PizzaCard=styled.div`
+border-radius:24px;
+border: none;
+`
+const BetweenReverseCard=styled.div`
+display: flex;
+flex-direction: reverse;
+justify-content: space-between;
+`
+
 
 export {
     Container,
@@ -298,5 +315,8 @@ export {
     Slide,
     SlideBtn,
     LeftArrow,
-    RightArrow
+    RightArrow,
+    PizzaImg,
+    PizzaCard,
+    BetweenReverseCard
 }
