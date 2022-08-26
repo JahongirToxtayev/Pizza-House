@@ -5,7 +5,7 @@ import SliderImg1 from "../assets/images/slide-1-1920x753.jpeg"
 import SliderImg2 from "../assets/images/slide-2-1920x753.jpeg"
 import SliderImg3 from "../assets/images/lukas-bee-T-SkHm-18qQ-unsplash.jpg"
 
-const All=styled.body`
+const All=styled.div`
 font-family: 'Poppins',sans-serif;
 `
 const Container = styled.div`
@@ -280,6 +280,7 @@ border-top-left-radius:24px;
 const PizzaCard=styled.div`
 border-radius:24px;
 border: none;
+position:relative;
 `
 const BetweenReverseCard=styled.div`
 display: flex;
@@ -306,6 +307,50 @@ const LikeBtn=styled.button`
 border: none;
 background: none;
 font-size: 24px;
+`
+const PurchaseDiv=styled.div`
+display:flex;
+width: 100%;
+height: 100%;
+justify-content: center;
+align-items: center;
+position:absolute;
+border-radius:24px;
+`
+const BgOpacity=styled.div`
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  background-color: rgba(0,0,0,0.3);
+  border-radius:24px;
+  position: absolute;
+`
+const PurchaseBtn=styled.button`
+&:hover{
+  background-color: lightseagreen;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+  background-color: #FFE745;
+  color: #000;
+  height: 65px;
+width: 150px;
+border: none;
+margin: 10px 0;
+letter-spacing: 1px;
+font-size: 16px;
+font-weight: 500;
+text-transform: uppercase;
+z-index:3;
+`
+const BookTable=styled.div`
+min-width: 1000px;
+min-height: 500px;
+`
+const BookInputDiv=styled.div`
+display: flex;
+justify-content:space-around;
 `
 
 
@@ -341,5 +386,10 @@ export {
     PizzaCard,
     BetweenReverseCard,
     MoreBtn,
-    LikeBtn
+    LikeBtn,
+    PurchaseDiv,
+    PurchaseBtn,
+    BgOpacity,
+    BookTable,
+    BookInputDiv
 }
