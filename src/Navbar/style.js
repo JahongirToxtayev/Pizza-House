@@ -257,7 +257,7 @@ const BgBlack = styled.div`
   position: absolute;
 `
 
-const SlideBtn = styled(BestAtmosBtn)`
+const SlideBtn = styled.button`
   &:hover{
     background-color: lightseagreen;
     color: #fff;
@@ -267,6 +267,12 @@ const SlideBtn = styled(BestAtmosBtn)`
   background-color: #FFE745;
   color: #000;
   font-weight: 700;
+  height: 75px;
+  width: 250px;
+  border: none;
+  margin: 20px 0;
+  letter-spacing: 1px;
+  font-size: 16px;
 `
 
 

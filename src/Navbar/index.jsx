@@ -130,6 +130,7 @@ function Index() {
                     if (slideIndex === index - 1 || (index === 0 && slideIndex === slides.length - 1)) {
                         position = "lastSlide"
                     }
+                    let slideClass = slideIndex === index ? "activeSlide" : "nonActiveSlide"
                     return <Slide  className={`slide ${position}`} key={id} bg={id}>
                         <h1 style={{width: "50%", fontWeight: "400", fontSize: "130px", color: `${id === 3 ? "#FFE745" : "#fff"}`, margin: "30px 0 20px"}}>{title}</h1>
                         <h3 style={{fontWeight: "400", fontSize: "20px", lineHeight: "1.55", color: "#fff", width: "40%"}}>{info}</h3>
@@ -215,9 +216,9 @@ function Index() {
                 </div>
             </BestAtmosDiv>
 
-            <div>
-                <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
-            </div>
+            {/*<div>*/}
+            {/*    <PizzasTitle>SELECTED PIZZAS</PizzasTitle>*/}
+            {/*</div>*/}
         </All>);
 }
 

@@ -68,3 +68,13 @@ color: #fff
   opacity: 0;
   transition: all 0.3s linear;
 }
+
+.activeSlide{
+  opacity: 1;
+  display: block;
+}
+
+.nonActiveSlide{
+  opacity: 0;
+  display: none;
+}
