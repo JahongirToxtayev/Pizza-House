@@ -1,12 +1,10 @@
-import Navbar from "./Navbar";
-import {Routes, Route} from "react-router-dom";
+import Navbar from "./Navbar/index.jsx";
+
 
 function App() {
   return (
     <>
-        <Routes>
-            <Route path={"/"} element={<Navbar />}></Route>
-        </Routes>
+      <Navbar/>  
     </>
   );
 }

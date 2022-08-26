@@ -5,7 +5,7 @@ import SliderImg1 from "../assets/images/slide-1-1920x753.jpeg"
 import SliderImg2 from "../assets/images/slide-2-1920x753.jpeg"
 import SliderImg3 from "../assets/images/lukas-bee-T-SkHm-18qQ-unsplash.jpg"
 
-const All=styled.body`
+const All=styled.div`
 font-family: 'Poppins',sans-serif;
 `
 const Container = styled.div`
@@ -104,10 +104,10 @@ const Wrapper = styled.div`
 const Button = styled.button`
     border: none;
     outline: none;
-    font-weight: bold;
+    font-weight: 500;
     background-color: transparent;
     margin: 0 10px;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.34;
     padding: 10px 0;
     border-bottom: ${({borderBottom}) => borderBottom ? "5px solid #6046b6" : "5px solid transparent"};
@@ -139,8 +139,9 @@ const CartItems = styled.span`
 const OurMenuTitle=styled.h1`
 text-align: center;
 font-weight: 400;
-  font-size: 55px;
-  font-family: sa;
+  font-size: 65px;
+  letter-spacing: 2px;
+  font-family: 'Times New Roman', Times, serif;
   
 `
 const MenuChild=styled.div`
@@ -150,8 +151,8 @@ margin: 30px 0;
 
 
 const ImgWrapper=styled.div`
-opacity: 0.8;
-filter: brightness(0.7);
+opacity: 0.9;
+//filter: brightness(0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -209,7 +210,7 @@ background-image: url(${BestAtmosImg});
 const BestAtmosTitle=styled.h1`
 font-family: 'Times New Roman', Times, serif;
 font-weight: 500;
-font-size: 55px;
+font-size: 65px;
   color: #fff
 `
 const BestAtmosBtn=styled.button`
@@ -275,6 +276,89 @@ const SlideBtn = styled.button`
   font-size: 16px;
 `
 
+const PizzaImg=styled.img`
+width: 100%;
+height: 250px;
+object-fit: cover;
+border-top-right-radius:24px;
+border-top-left-radius:24px;
+`
+const PizzaCard=styled.div`
+border-radius:24px;
+border: none;
+position:relative;
+`
+const BetweenReverseCard=styled.div`
+display: flex;
+flex-direction: reverse;
+justify-content: space-between;
+`
+const MoreBtn=styled.button`
+&:hover{
+  background-color: #FFE745;
+  color: #000;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+  background-color: lightseagreen;
+  color: #fff;
+  padding: 5px;
+border: none;
+margin: 20px 0;
+letter-spacing: 1px;
+font-size: 16px;
+font-weight: 500;
+`
+const LikeBtn=styled.button`
+border: none;
+background: none;
+font-size: 24px;
+`
+const PurchaseDiv=styled.div`
+display:flex;
+width: 100%;
+height: 100%;
+justify-content: center;
+align-items: center;
+position:absolute;
+border-radius:24px;
+`
+const BgOpacity=styled.div`
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  background-color: rgba(0,0,0,0.3);
+  border-radius:24px;
+  position: absolute;
+`
+const PurchaseBtn=styled.button`
+&:hover{
+  background-color: lightseagreen;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+  background-color: #FFE745;
+  color: #000;
+  height: 65px;
+width: 150px;
+border: none;
+margin: 10px 0;
+letter-spacing: 1px;
+font-size: 16px;
+font-weight: 500;
+text-transform: uppercase;
+z-index:3;
+`
+const BookTable=styled.div`
+min-width: 1000px;
+min-height: 500px;
+`
+const BookInputDiv=styled.div`
+display: flex;
+justify-content:space-around;
+`
+
 
 export {
     Container,
@@ -303,5 +387,15 @@ export {
     Slide,
     SlideBtn,
     LeftArrow,
-    RightArrow
+    RightArrow,
+    PizzaImg,
+    PizzaCard,
+    BetweenReverseCard,
+    MoreBtn,
+    LikeBtn,
+    PurchaseDiv,
+    PurchaseBtn,
+    BgOpacity,
+    BookTable,
+    BookInputDiv
 }
