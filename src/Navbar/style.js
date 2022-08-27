@@ -346,11 +346,16 @@ z-index:3;
 `
 const BookTable=styled.div`
 min-width: 1000px;
-min-height: 500px;
+min-height: 430px;
 `
 const BookInputDiv=styled.div`
 display: flex;
 justify-content:space-around;
+`
+const TextAreaDiv=styled.div`
+display: flex;
+justify-content: center;
+margin: 50px 20px;
 `
 
 
@@ -391,5 +396,6 @@ export {
     PurchaseBtn,
     BgOpacity,
     BookTable,
-    BookInputDiv
+    BookInputDiv,
+    TextAreaDiv
 }

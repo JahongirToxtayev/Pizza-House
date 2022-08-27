@@ -37,7 +37,8 @@ import {
     PurchaseBtn,
     BgOpacity,
     BookTable,
-    BookInputDiv
+    BookInputDiv,
+    TextAreaDiv
 } from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import Menu1 from "../assets/images/menu-1-370x278.jpg"
@@ -59,7 +60,7 @@ import SaladsBackImg from "../assets/images/bg-4.jpg"
 import AOS from 'aos';
 import "aos";
 import "aos/dist/aos.css";
-import {Input,Spacer,Grid} from "@nextui-org/react"
+import {Input,Spacer,Grid,Textarea} from "@nextui-org/react"
 
 
 
@@ -301,27 +302,57 @@ function Index() {
                 }}>
                     <BestAtmosTitle>-30% on all salads & drinks</BestAtmosTitle>
                     <div style={{display: "flex", alignItems: "center"}}><Line style={{backgroundColor:"#6046B6"}}></Line><BestAtmosPersonSubt>Taste some of the best PizzaHouse salads!</BestAtmosPersonSubt></div>
-                    <BestAtmosBtn style={{backgroundColor:"#FFE745",color:"#111",fontWeight:"600"}}>CONTACT US</BestAtmosBtn>
+                    <SlideBtn>CONTACT US</SlideBtn>
                 </div>
             </BestAtmosDiv>
 
                 <div className="container">
                 <PizzasTitle>BOOK YOUR TABLE</PizzasTitle>
-                <BookTable className="shadow p-4">
-                <Grid.Container gap={2} justify="center">
-      <Grid xs={5}>
-      <Input clearable bordered Placeholder="Name" size='xl' />
-      </Grid>
-      <Grid xs={4}>
-      <Input clearable bordered Placeholder="Name" size='xl' />
-      </Grid>
-      <Grid xs={4}>
-      <Input clearable bordered Placeholder="Name" size='xl' />
-      </Grid>
-    </Grid.Container>
-
+                <BookTable className="shadow pt-5 p-3 my-2">
+                <BookInputDiv>
+        <Input
+        clearable
+          bordered
+          animated={true}
+          labelPlaceholder="Your Name"
+          color="secondary"
+          size='xl'
+          width='46%'
+          height='50px'
+        />
+     
+        <Input
+        clearable
+          bordered
+          animated={true}
+          labelPlaceholder="Your Gmail"
+          labelRight="@gmail.com"
+          color="secondary"
+          size='xl'
+          width='46%'
+        />
+    
+                </BookInputDiv>
+                <TextAreaDiv>
+                <Textarea
+          bordered
+          color="secondary"
+          labelPlaceholder="Message"
+          animated={true}
+          width="100%"
+          minRows={7}
+          size='xl'
+        />
+                </TextAreaDiv>
+                <div className="row px-4">
+                    <div className="col-3">
+                <SlideBtn>SEND MESSAGE</SlideBtn>
+                    </div>
+                    <div className="col-7">
+                    <h2 className='text-center text-secondary mt-3'>Please reserve your table at least 1 day in advance.</h2>
+                    </div>
+                </div>
                 </BookTable>
-                
                 </div>
 
         </All>
