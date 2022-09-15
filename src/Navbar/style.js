@@ -152,11 +152,15 @@ margin: 30px 0;
 
 const ImgWrapper=styled.div`
 opacity: 0.9;
-//filter: brightness(0.7);
+filter: brightness(0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 370px;
+  transition: filter 0ms, opacity 0ms;
+  &:hover{
+    transition: filter 0ms, opacity 0ms;
+  }
 `
 
 const ImgDiv=styled.div`
@@ -232,7 +236,6 @@ font-weight: 500;
 `
 const Line=styled.span`
 display: inline-block;
-margin-left: 0px;
 margin: 7px 0;
 width: 60px;
 height: 4px;
@@ -290,7 +293,7 @@ position:relative;
 `
 const BetweenReverseCard=styled.div`
 display: flex;
-flex-direction: reverse;
+flex-direction: revert;
 justify-content: space-between;
 `
 const MoreBtn=styled.button`
