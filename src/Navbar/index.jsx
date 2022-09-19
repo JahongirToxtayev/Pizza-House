@@ -195,8 +195,10 @@ function Index() {
                             <ImgWrapper className="img-wrapper">
                                 <img className="img" src={Menu1} alt="menu-1"/>
                             </ImgWrapper>
+                            <Link to={"/salads"}>
                             <MenuIconDiv className="icon-wrapper"><TbLeaf className="icon"/>
                             </MenuIconDiv>
+                            </Link>
                             <MenuSubtitle>Salads</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
@@ -205,7 +207,9 @@ function Index() {
                             <ImgWrapper className="img-wrapper">
                                 <img className="img" src={Menu2} alt="menu-2"/>
                             </ImgWrapper>
+                            <Link to={"/pizzas"}>
                             <MenuIconDiv className="icon-wrapper"><IoPizzaOutline className="icon"/></MenuIconDiv>
+                            </Link>
                             <MenuSubtitle>Pizzas</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
@@ -214,7 +218,9 @@ function Index() {
                             <ImgWrapper className="img-wrapper">
                                 <img className="img" src={Menu3} alt="menu-3"/>
                             </ImgWrapper>
+                            <Link to={"/burgers"}>
                             <MenuIconDiv className="icon-wrapper"><GiHamburger className="icon"/></MenuIconDiv>
+                            </Link>
                             <MenuSubtitle>Burgers</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
@@ -223,7 +229,9 @@ function Index() {
                             <ImgWrapper className="img-wrapper">
                                 <img className="img" src={Menu4} alt="menu-4"/>
                             </ImgWrapper>
+                            <Link to={"/desserts"}>
                             <MenuIconDiv className="icon-wrapper"><FaIceCream className="icon"/></MenuIconDiv>
+                            </Link>
                             <MenuSubtitle>Desserts</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
@@ -232,7 +240,9 @@ function Index() {
                             <ImgWrapper className="img-wrapper">
                                 <img className="img" src={Menu5} alt="menu-5"/>
                             </ImgWrapper>
+                            <Link to={"/drinks"}>
                             <MenuIconDiv className="icon-wrapper"><BiDrink className="icon"/></MenuIconDiv>
+                            </Link>
                             <MenuSubtitle>Drinks</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
@@ -241,8 +251,10 @@ function Index() {
                             <ImgWrapper className="img-wrapper">
                                 <img className="img" src={Menu6} alt="menu-6"/>
                             </ImgWrapper>
+                            <Link to={"/seafoods"}>
                             <MenuIconDiv className="icon-wrapper"><IoFish className="icon"/></MenuIconDiv>
-                            <MenuSubtitle>Seafood</MenuSubtitle>
+                            </Link>
+                            <MenuSubtitle>Sea Foods</MenuSubtitle>
                         </ImgDiv>
                     </MenuChild>
                 </MenuParent>
@@ -266,7 +278,9 @@ function Index() {
                 <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
                 <div className="row">
                     {(source.length>0)&&source.map((v,i)=>{
-                        return <div className="col-3" key={i} >
+                        if (v.Cost>11){
+                            return(
+                                <div className="col-3" key={i} >
                             <PizzaCard className="card mx-2 my-3 shadow pb-2"  data-aos={"zoom-in-left"}>
                                 <PizzaImg  src={`${v.Image}`} alt="" />
                                 <div className="body-card">
@@ -292,6 +306,10 @@ function Index() {
                             </PurchaseDiv>}
                             </PizzaCard>
                         </div>
+                            )
+                            
+                        }
+                         
                     })}
                 </div>
             </div>
@@ -349,7 +367,7 @@ function Index() {
                 <SlideBtn>SEND MESSAGE</SlideBtn>
                     </div>
                     <div className="col-7">
-                    <h2 className='text-center text-secondary mt-3'>Please reserve your table at least 1 day in advance.</h2>
+                    <h3 className='text-center text-secondary mt-3'>Please reserve your table at least 1 day in advance.</h3>
                     </div>
                 </div>
                 </BookTable>
