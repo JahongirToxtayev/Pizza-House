@@ -33,7 +33,18 @@ color: #fff
   transform: scale(1);
   object-fit: cover;
   object-position: center;
-  transition: all 0.5s ease;
+  opacity: 0.9;
+  transition: all 0.5s ease, opacity 0ms;
+}
+
+.img-wrapper:hover{
+  opacity: 0.9;
+  filter: brightness(0.7);
+  transition: filter 0ms, opacity 0ms;
+}
+
+.img-wrapper{
+  transition: filter 0ms, opacity 0ms;
 }
 
 .img{
@@ -72,4 +83,14 @@ color: #fff
   height: 100%;
   opacity: 0;
   transition: all 0.3s linear;
+}
+
+.activeSlide{
+  opacity: 1;
+  display: block;
+}
+
+.nonActiveSlide{
+  opacity: 0;
+  display: none;
 }

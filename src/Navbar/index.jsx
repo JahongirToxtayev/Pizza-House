@@ -177,6 +177,7 @@ function Index() {
                     if (slideIndex === index - 1 || (index === 0 && slideIndex === slides.length - 1)) {
                         position = "lastSlide"
                     }
+                    let slideClass = slideIndex === index ? "activeSlide" : "nonActiveSlide"
                     return <Slide  className={`slide ${position}`} key={id} bg={id}>
                         <h1 style={{width: "50%", fontWeight: "400", fontSize: "130px", color: `${id === 3 ? "#FFE745" : "#fff"}`, margin: "30px 0 20px"}}>{title}</h1>
                         <h3 style={{fontWeight: "400", fontSize: "20px", lineHeight: "1.55", color: "#fff", width: "40%"}}>{info}</h3>
@@ -274,16 +275,14 @@ function Index() {
                 </div>
             </BestAtmosDiv>
 
-            <div className='container'>
-                <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
-                <div className="row">
-                    {(source.length>0)&&source.map((v,i)=>{
-                        if (v.Cost>11){
-                            return(
-                                <div className="col-3" key={i} >
-                            <PizzaCard className="card mx-2 my-3 shadow pb-2"  data-aos={"zoom-in-left"}>
-                                <PizzaImg  src={`${v.Image}`} alt="" />
-                                <div className="body-card">
+        <div className='container'>
+            <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
+            <div className="row">
+                {(source.length>0)&&source.map((v,i)=>{
+                    return <div className="col-3" key={i} >
+                        <PizzaCard className="card mx-2 my-3 shadow pb-2"  data-aos={"zoom-in-left"}>
+                            <PizzaImg  src={`${v.Image}`} alt="" />
+                            <div className="body-card">
                                 <h4 className='text-center'>{v.Pizza}</h4>
                                 <BetweenReverseCard className='mx-3'>
                                     <p>
@@ -293,7 +292,7 @@ function Index() {
                                         <span className={v.Cost>10 ? "text-warning":"text-secondary"}><AiFillStar/></span>
                                         <span className={v.Cost>12 ? "text-warning":"text-secondary"}><AiFillStar/></span>
                                     </p>
-                                    <h5>{`${v.Cost} $`}</h5>
+                                  <h5>{`${v.Cost} $`}</h5>
                                 </BetweenReverseCard>
                                 <BetweenReverseCard className='mx-3'>
                                     <LikeBtn><AiOutlineHeart/></LikeBtn>
@@ -304,15 +303,40 @@ function Index() {
                                 <BgOpacity/>
                                 <PurchaseBtn>Purchase</PurchaseBtn>
                             </PurchaseDiv>}
-                            </PizzaCard>
-                        </div>
-                            )
-                            
-                        }
-                         
-                    })}
-                </div>
+                        </PizzaCard>
+                    </div>
+                })}
             </div>
+        </div>
+        <BestAtmosDiv className="row" style={{backgroundImage:`url(${SaladsBackImg})`}}>
+            <BgBlack/>
+            <div className="col-5" style={{
+                zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "left"
+            }}>
+                <BestAtmosTitle>-30% on all salads & drinks</BestAtmosTitle>
+                <div style={{display: "flex", alignItems: "center"}}><Line style={{backgroundColor:"#6046B6"}}></Line><BestAtmosPersonSubt>Taste some of the best PizzaHouse salads!</BestAtmosPersonSubt></div>
+                <BestAtmosBtn style={{backgroundColor:"#FFE745",color:"#111",fontWeight:"600"}}>CONTACT US</BestAtmosBtn>
+            </div>
+        </BestAtmosDiv>
+
+        <div className="container">
+            <PizzasTitle>BOOK YOUR TABLE</PizzasTitle>
+            <BookTable className="shadow p-4">
+                <Grid.Container gap={2} justify="center">
+                    <Grid xs={5}>
+                        <Input clearable bordered Placeholder="Name" size='xl' />
+                    </Grid>
+                    <Grid xs={4}>
+                        <Input clearable bordered Placeholder="Name" size='xl' />
+                    </Grid>
+                    <Grid xs={4}>
+                        <Input clearable bordered Placeholder="Name" size='xl' />
+                    </Grid>
+                </Grid.Container>
+
+            </BookTable>
+
+        </div>
             <BestAtmosDiv className="row" style={{backgroundImage:`url(${SaladsBackImg})`}}>
                 <BgBlack/>
                 <div className="col-5" style={{
@@ -373,8 +397,8 @@ function Index() {
                 </BookTable>
                 </div>
 
-        </All>
-        );
+
+        </All>)
 }
 
 export default Index;
