@@ -1,14 +1,17 @@
 import styled from "styled-components"
 import {Cart} from "@styled-icons/bootstrap/Cart"
-import BestAtmosImg from "../assets/images/bg-3.jpg"
-import SliderImg1 from "../assets/images/slide-1-1920x753.jpeg"
-import SliderImg2 from "../assets/images/slide-2-1920x753.jpeg"
-import SliderImg3 from "../assets/images/lukas-bee-T-SkHm-18qQ-unsplash.jpg"
+import BestAtmosImg from "./assets/images/bg-3.jpg"
+import SliderImg1 from "./assets/images/slide-1-1920x753.jpeg"
+import SliderImg2 from "./assets/images/slide-2-1920x753.jpeg"
+import SliderImg3 from "./assets/images/lukas-bee-T-SkHm-18qQ-unsplash.jpg"
 
 const All=styled.div`
 font-family: 'Poppins',sans-serif;
 `
 const Container = styled.div`
+  position: fixed!important;
+  z-index: 9999999!important;
+  top: 0!important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +19,7 @@ const Container = styled.div`
   box-sizing: border-box;
   padding: 10px 100px;
   margin: auto;
-  position: relative;
+  //position: relative;
   background: #F5F5F5;
   overflow: hidden;
   height: 80px;
@@ -28,7 +31,7 @@ const SliderContainer = styled.div`
   overflow: hidden;
   display: flex;
   height: 753px;
-  width: 100%;
+  width: 100vw;
 `
 
 const getBg = (bg) => bg === 1 ? SliderImg1 : bg === 2 ? SliderImg2 : SliderImg3
@@ -204,7 +207,7 @@ display: flex;
 justify-content: end;
 margin: 70px 0;
 background-size: cover;
-width: 100%;
+width: 100vw;
 height: 500px;
 background-image: url(${BestAtmosImg});
   background-position: bottom;
@@ -226,13 +229,13 @@ const BestAtmosBtn=styled.button`
 }
   background-color: lightseagreen;
   color: #fff;
-  height: 75px;
-width: 250px;
+  height: ${({small}) => small ? "60px" : "75px"};
+  width: ${({small}) => small ? "145px" : "250px"};
 border: none;
 margin: 20px 0;
 letter-spacing: 1px;
 font-size: 16px;
-font-weight: 500;
+font-weight: 700;
 `
 const Line=styled.span`
 display: inline-block;
@@ -268,11 +271,11 @@ const SlideBtn = styled.button`
     letter-spacing: 2px;
     transition: all 0.5s ease;
   }
+  height: ${({small}) => small ? "60px" : "75px"};
+  width: ${({small}) => small ? "145px" : "250px"};
   background-color: #FFE745;
   color: #000;
   font-weight: 700;
-  height: 75px;
-  width: 250px;
   border: none;
   margin: 20px 0;
   letter-spacing: 1px;
@@ -366,6 +369,7 @@ display: flex;
 justify-content: center;
 margin: 50px 20px;
 `
+
 
 
 export {
