@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect,useRef} from 'react';
 import {
     Container,
     Wrapper,
@@ -38,7 +38,11 @@ import {
     BgOpacity,
     BookTable,
     BookInputDiv,
-    TextAreaDiv
+    TextAreaDiv,
+    SwiperImgDiv,
+    SwiperImg,
+    SwiperCard
+
 } from "./style";
 import Logo from "../assets/images/logo-198x66.png"
 import Menu1 from "../assets/images/menu-1-370x278.jpg"
@@ -61,6 +65,17 @@ import AOS from 'aos';
 import "aos";
 import "aos/dist/aos.css";
 import {Input,Spacer,Grid,Textarea} from "@nextui-org/react"
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+
+// import required modules
+import { EffectCoverflow, Pagination,Autoplay} from "swiper";
 
 
 
@@ -275,14 +290,16 @@ function Index() {
                 </div>
             </BestAtmosDiv>
 
-        <div className='container'>
-            <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
-            <div className="row">
-                {(source.length>0)&&source.map((v,i)=>{
-                    return <div className="col-3" key={i} >
-                        <PizzaCard className="card mx-2 my-3 shadow pb-2"  data-aos={"zoom-in-left"}>
-                            <PizzaImg  src={`${v.Image}`} alt="" />
-                            <div className="body-card">
+            <div className='container'>
+                <PizzasTitle>SELECTED PIZZAS</PizzasTitle>
+                <div className="row">
+                    {(source.length>0)&&source.map((v,i)=>{
+                         if (v.Cost>11){
+                            return(
+                                <div className="col-3" key={i} >
+                            <PizzaCard className="card mx-2 my-3 shadow pb-2"  data-aos={"zoom-in-left"}>
+                                <PizzaImg  src={`${v.Image}`} alt="" />
+                                <div className="body-card">
                                 <h4 className='text-center'>{v.Pizza}</h4>
                                 <BetweenReverseCard className='mx-3'>
                                     <p>
@@ -292,7 +309,7 @@ function Index() {
                                         <span className={v.Cost>10 ? "text-warning":"text-secondary"}><AiFillStar/></span>
                                         <span className={v.Cost>12 ? "text-warning":"text-secondary"}><AiFillStar/></span>
                                     </p>
-                                  <h5>{`${v.Cost} $`}</h5>
+                                    <h5>{`${v.Cost} $`}</h5>
                                 </BetweenReverseCard>
                                 <BetweenReverseCard className='mx-3'>
                                     <LikeBtn><AiOutlineHeart/></LikeBtn>
@@ -305,38 +322,10 @@ function Index() {
                             </PurchaseDiv>}
                         </PizzaCard>
                     </div>
-                })}
+                    )}})}
             </div>
         </div>
-        <BestAtmosDiv className="row" style={{backgroundImage:`url(${SaladsBackImg})`}}>
-            <BgBlack/>
-            <div className="col-5" style={{
-                zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "center", textAlign: "left"
-            }}>
-                <BestAtmosTitle>-30% on all salads & drinks</BestAtmosTitle>
-                <div style={{display: "flex", alignItems: "center"}}><Line style={{backgroundColor:"#6046B6"}}></Line><BestAtmosPersonSubt>Taste some of the best PizzaHouse salads!</BestAtmosPersonSubt></div>
-                <BestAtmosBtn style={{backgroundColor:"#FFE745",color:"#111",fontWeight:"600"}}>CONTACT US</BestAtmosBtn>
-            </div>
-        </BestAtmosDiv>
 
-        <div className="container">
-            <PizzasTitle>BOOK YOUR TABLE</PizzasTitle>
-            <BookTable className="shadow p-4">
-                <Grid.Container gap={2} justify="center">
-                    <Grid xs={5}>
-                        <Input clearable bordered Placeholder="Name" size='xl' />
-                    </Grid>
-                    <Grid xs={4}>
-                        <Input clearable bordered Placeholder="Name" size='xl' />
-                    </Grid>
-                    <Grid xs={4}>
-                        <Input clearable bordered Placeholder="Name" size='xl' />
-                    </Grid>
-                </Grid.Container>
-
-            </BookTable>
-
-        </div>
             <BestAtmosDiv className="row" style={{backgroundImage:`url(${SaladsBackImg})`}}>
                 <BgBlack/>
                 <div className="col-5" style={{
@@ -347,6 +336,100 @@ function Index() {
                     <SlideBtn>CONTACT US</SlideBtn>
                 </div>
             </BestAtmosDiv>
+
+            <div className="container swiper-parent_div">
+            <PizzasTitle>WHAT PEOPLE SAY</PizzasTitle>
+            <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={"auto"}
+        loop={true}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        pagination={{
+            clickable: true,
+          }}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+        modules={[EffectCoverflow, Pagination,Autoplay]}
+        className="mySwiper swiper"
+      >
+        <SwiperSlide className='swiper-slide'>
+          <SwiperCard className="card shadow">
+            <SwiperImgDiv>
+          <SwiperImg src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </SwiperImgDiv>
+            <div className="body-card">
+                <h4 className='text-center'>Jamal Akbarov1</h4>
+                <p className='text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum modi reiciendis voluptates dicta consectetur nihil hic labore ut ea quo.</p>
+            </div>
+          </SwiperCard>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+        <SwiperCard className="card shadow">
+            <SwiperImgDiv>
+          <SwiperImg src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </SwiperImgDiv>
+            <div className="body-card">
+                <h4 className='text-center'>Jamal Akbarov2</h4>
+                <p className='text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum modi reiciendis voluptates dicta consectetur nihil hic labore ut ea quo.</p>
+            </div>
+          </SwiperCard>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+        <SwiperCard className="card shadow">
+            <SwiperImgDiv>
+          <SwiperImg src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </SwiperImgDiv>
+            <div className="body-card">
+                <h4 className='text-center'>Jamal Akbarov3</h4>
+                <p className='text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum modi reiciendis voluptates dicta consectetur nihil hic labore ut ea quo.</p>
+            </div>
+          </SwiperCard>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+        <SwiperCard className="card shadow">
+            <SwiperImgDiv>
+          <SwiperImg src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </SwiperImgDiv>
+            <div className="body-card">
+                <h4 className='text-center'>Jamal Akbarov4</h4>
+                <p className='text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum modi reiciendis voluptates dicta consectetur nihil hic labore ut ea quo.</p>
+            </div>
+          </SwiperCard>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+        <SwiperCard className="card shadow">
+            <SwiperImgDiv>
+          <SwiperImg src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </SwiperImgDiv>
+            <div className="body-card">
+                <h4 className='text-center'>Jamal Akbarov5</h4>
+                <p className='text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum modi reiciendis voluptates dicta consectetur nihil hic labore ut ea quo.</p>
+            </div>
+          </SwiperCard>
+        </SwiperSlide>
+        <SwiperSlide className='swiper-slide'>
+        <SwiperCard className="card shadow">
+            <SwiperImgDiv>
+          <SwiperImg src="https://swiperjs.com/demos/images/nature-2.jpg" />
+            </SwiperImgDiv>
+            <div className="body-card">
+                <h4 className='text-center'>Jamal Akbarov6</h4>
+                <p className='text-center'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum modi reiciendis voluptates dicta consectetur nihil hic labore ut ea quo.</p>
+            </div>
+          </SwiperCard>
+        </SwiperSlide>
+      </Swiper>
+            </div>
 
                 <div className="container">
                 <PizzasTitle>BOOK YOUR TABLE</PizzasTitle>

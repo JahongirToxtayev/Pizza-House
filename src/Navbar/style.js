@@ -366,6 +366,26 @@ display: flex;
 justify-content: center;
 margin: 50px 20px;
 `
+const SwiperCard=styled.div`
+border: none;
+width: 100%;
+display: block;
+padding: 20px;
+height: 100%;
+`
+const SwiperImgDiv=styled.div`
+margin: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+`
+const SwiperImg=styled.img`
+height: 200px;
+width: 200px;
+object-fit: cover;
+border-radius: 50%;
+`
+
 
 
 export {
@@ -406,5 +426,8 @@ export {
     BgOpacity,
     BookTable,
     BookInputDiv,
-    TextAreaDiv
-}
+    TextAreaDiv,
+    SwiperImgDiv,
+    SwiperImg,
+    SwiperCard
+} 
