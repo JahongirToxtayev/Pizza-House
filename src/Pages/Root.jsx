@@ -12,9 +12,8 @@ import SaladsDiscount from "../components/SaladsDiscount";
 import SelectedPizzas from "../components/SelectedPizzas";
 import OrderTable from "../components/OrderTable"
 import Menu from "../components/Menu";
-import Navbar from "../components/Navbar";
+import SwiperSlideCom  from "../components/swiper comp/SwiperSlideCom"
 import Slider from "../components/Slider"
-import Footer from "../components/Footer";
 
 
 
@@ -34,7 +33,7 @@ function Root() {
     const axios = require('axios').default;
     useEffect(() => {
       
-        axios.get('https://myjson.dit.upm.es/api/bins/aovm')
+        axios.get('http://myjson.dit.upm.es/api/bins/842i')
         .then(function (response) {
           dispatch({type:"ALL_DATA",payload:response.data})
         })
@@ -52,6 +51,7 @@ function Root() {
             <Interval />
             <SelectedPizzas />
             <SaladsDiscount />
+            <SwiperSlideCom/>
             <OrderTable />
         </All>
     )
