@@ -23,11 +23,12 @@ const Pizzas = () => {
                 <PizzasTitle>PIZZAS</PizzasTitle>
                 <div className="row">
                     {(source.length>0)&&source.map((v,i)=>{
-                        return <div className="col-3" key={i} >
+                        if(v.Categories=="pizzas"){
+                            return (<div className="col-3" key={i} >
                             <PizzaCard className="card mx-2 my-3 shadow pb-2"  data-aos={"zoom-in-left"}>
                                 <PizzaImg  src={`${v.Image}`} alt="" />
                                 <div className="body-card">
-                                <h4 className='text-center'>{v.Pizza}</h4>
+                                <h4 className='text-center'>{v.name}</h4>
                                 <BetweenReverseCard className='mx-3'>
                                     <p>
                                         <span className='text-warning'><AiFillStar/></span>
@@ -48,7 +49,8 @@ const Pizzas = () => {
                                 <PurchaseBtn>Purchase</PurchaseBtn>
                             </PurchaseDiv>}
                             </PizzaCard>
-                        </div>
+                        </div>)
+                        }
                     })}
                 </div>
             </div>

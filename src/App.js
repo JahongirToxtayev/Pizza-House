@@ -22,13 +22,13 @@ function App() {
             <Route path={"/"} element={<Root/>}/>
             <Route path={"/about"} element={<About />}/>
             <Route path={"/contact"} element={<Contact />}/>
-            <Route path={"/more/:id"} element={<More/>}/>
-            <Route path='/burgers' element={<Burgers/>} />
-            <Route path='/salads' element={<Salads/>} />
-            <Route path='/pizzas' element={<Pizzas/>} />
-            <Route path='/seafoods' element={<SeaFoods/>} />
-            <Route path='/desserts' element={<Desserts/>} />
-            <Route path='/drinks' element={<Drinks/>} />
+            <Route path={"/more/:id"} element={<More />}/>
+            <Route path='/burgers' element={<Burgers />} />
+            <Route path='/salads' element={<Salads />} />
+            <Route path='/pizzas' element={<Pizzas />} />
+            <Route path='/seafoods' element={<SeaFoods />} />
+            <Route path='/desserts' element={<Desserts />} />
+            <Route path='/drinks' element={<Drinks />} />
         </Routes>
         <Footer />
     </>
