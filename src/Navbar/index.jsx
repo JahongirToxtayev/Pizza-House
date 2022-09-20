@@ -146,7 +146,7 @@ function Index() {
     const axios = require('axios').default;
     useEffect(() => {
       
-        axios.get('http://myjson.dit.upm.es/api/bins/j0te')
+        axios.get('http://myjson.dit.upm.es/api/bins/842i')
         .then(function (response) {
           dispatch({type:"ALL_DATA",payload:response.data})
         })

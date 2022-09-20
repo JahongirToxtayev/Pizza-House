@@ -18,6 +18,9 @@ const Burgers = () => {
   const [Purchase, setPurchase] = useState()
 
 
+  
+  
+  
   return (
     <div className='container'>
                 <PizzasTitle>BURGERS</PizzasTitle>
