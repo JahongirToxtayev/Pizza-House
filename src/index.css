@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
 body {
   margin: 0;
   padding: 0;
@@ -93,6 +96,16 @@ color: #fff
 .nonActiveSlide{
   opacity: 0;
   display: none;
+}
+
+.full-width{
+  width: 100vw;
+}
+
+.center {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 /*Swiper*/
 .swiper-parent_div{

@@ -8,7 +8,7 @@ import {PizzasTitle,
   MoreBtn,
   PurchaseBtn,
   PurchaseDiv,BgOpacity
-} from "../../Navbar/style"
+} from "../../style"
 import { AiOutlineArrowRight,AiFillStar,AiOutlineHeart} from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
