@@ -15,7 +15,7 @@ import Menu6 from "../assets/images/menu-6-370x278.jpg";
 
 function Menu() {
     return (
-        <div className='full-width container my-5'>
+        <div className='full-width container my-5' id='our-menu'>
             <div className="center">
                 <OurMenuTitle>OUR MENU</OurMenuTitle>
                 <MenuParent className="row">

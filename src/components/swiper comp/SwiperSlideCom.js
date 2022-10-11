@@ -16,6 +16,7 @@ import { EffectCoverflow, Pagination,Autoplay} from "swiper";
 
 
 const SwiperCard=styled.div`
+transition: all 0.5s ease;
 border: none;
 width: 100%;
 display: block;
@@ -29,6 +30,7 @@ align-items: center;
 justify-content: center;
 `
 const SwiperImg=styled.img`
+transition: all 0.5s ease;
 height: 200px;
 width: 200px;
 object-fit: cover;

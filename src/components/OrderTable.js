@@ -6,7 +6,7 @@ import {Input, Textarea} from "@nextui-org/react";
 function OrderTable() {
     return (
         <div className="container full-width">
-            <div className="center">
+            <div className="center my-5">
                 <PizzasTitle>BOOK YOUR TABLE</PizzasTitle>
                 <BookTable className="shadow pt-5 p-3 my-2">
                     <BookInputDiv>

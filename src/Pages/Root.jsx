@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {
     All,
-    SliderContainer,
 } from "../style";
 import { useDispatch} from 'react-redux';
 import AOS from 'aos';
